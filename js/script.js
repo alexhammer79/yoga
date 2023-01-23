@@ -40,7 +40,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
 
     // timer
-    let deadline = '2023-01-10';
+    let deadline = '2023-02-10';
     function getTimeRemaining(endtime) {
         let t = Date.parse(endtime) - Date.parse(new Date());  // отнимаем от конечной даты текущую в милисекундах
         let seconds = Math.floor((t / 1000) % 60);         // Math.floor - округляем до целого числа, t / 1000 - делаем из милисекунд - секунды, %60 - остаток от дедения на 60 секунд
@@ -49,7 +49,7 @@ window.addEventListener('DOMContentLoaded', function () {
         let days = Math.floor((t / (1000 * 60 * 60 * 24)));    // дни
         return {
             'total': t,
-            'days': days,
+            'days': days + 'дней',
             'hours': hours,
             'minutes': minutes,
             'seconds': seconds
