@@ -89,7 +89,17 @@ window.addEventListener('DOMContentLoaded', function () {
 
     let more = document.querySelector('.more'),      // кнопка
         overlay = document.querySelector('.overlay'), // блок окна
-        close = document.querySelector('.popup-close'); // крестик закрытия
+        close = document.querySelector('.popup-close'), // крестик закрытия
+        moreTab = this.document.querySelectorAll('.description-btn');
+
+    moreTab.forEach(function (item, mass) {
+        item.addEventListener('click', function () {
+            overlay.style.display = "block";
+            document.body.style.overflow = 'hidden';  //отмена прокрутки страницы при появлении модального окна
+            this.classList.add('more-splash');    // добавлени анимации на кнопку
+        });
+
+    });
 
     more.addEventListener('click', function () {
         overlay.style.display = "block";
